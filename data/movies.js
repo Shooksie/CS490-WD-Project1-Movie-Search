@@ -21,8 +21,8 @@ var movies={"movies":[
 
 function make_movie(movie){/*create a function to set up the movie html and returns it */
     var html="";
-    html += "<div class='col-md-2 movie'> <img class='images' src='" + movie["photo"]+ "'> <p class='title'>"+ movie["title"] 
-        + "</p>" + "<p class='year'>" + movie["year"] + "</p>" + "<p class='starring'>" + movie["starring"] + "</p> </div>";
+    html += "<div class='col-md-2 movie'> <img class='images' src='" + movie["photo"]+ "'> <div class='title'><p>"+ movie["title"] 
+        + "</p>" + "<p>" + movie["year"] + "</p></div>" + "<p class='starring'>" + movie["starring"] + "</p> </div>";
     return html;
 }
 function set_grid(){
