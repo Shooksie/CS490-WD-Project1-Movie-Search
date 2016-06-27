@@ -21,7 +21,7 @@ var movies={"movies":[
 
 function make_movie(movie){/*create a function to set up the movie html and returns it */
     var html="";
-    html += "<div class='col-md-3 movie'> <img class='images' src='" + movie["photo"]+ "'> <p class='title'>"+ movie["title"] 
+    html += "<div class='col-md-2 movie'> <img class='images' src='" + movie["photo"]+ "'> <p class='title'>"+ movie["title"] 
         + "</p>" + "<p class='year'>" + movie["year"] + "</p>" + "<p class='starring'>" + movie["starring"] + "</p> </div>";
     return html;
 }
@@ -29,12 +29,16 @@ function set_grid(){
     /* set grid should set up a table of movies*/
     var html = "";
     var movie = movies["movies"];
-    html += "<div class='row'>";
-
+    var counter = 0;
+    html += "<div id='row' class='row'>";
     for(var info = 0; info < movie.length; info++){
-        var counter = 0;
-        console.log(make_movie(movie[info]));
         html += make_movie(movie[info]);
+        console.log(counter);
+        if(counter == 4){
+            html += "</div><div id='row' class='row'>"
+            counter = -1;
+        }
+        counter++;
     }
     html += "</div>"
     $("#display").html(html)
