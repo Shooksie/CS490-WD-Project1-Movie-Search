@@ -18,26 +18,30 @@
             color: black;
         }
         .images {
-            margin: 30px;
+            margin-top: 30px;
             padding: 5px;
             border: solid;
             border-width: 0.5px;
             border-color: lightgray;
-            width: 200px;
+            width:100%;
             height: 200px;;
         }
         #row {
-            padding-left: 3%;
-            padding-top: 5%;
+            padding-left: 9%;
+            padding-top: 2%;
         }
         .title {
             text-align: center;
-            color: white;
-            height: 40px;
             background-color: black;
-            bottom: 10px;
-            padding-left:3%;
-            width: 100%;
+            color: white;
+            opacity: 0.6;
+        }
+        #search {
+            padding-top: 40px;
+        }
+        .starring {
+            visibility: hidden;
+            display: none;
         }
     </style>
 </head>
@@ -50,6 +54,13 @@
                     </div>
                     <div class="col-md-4">
                         <h1> Rent A Movie</h1>
+                    </div>
+                    <div id="search" class="col-md-7">
+                        <input class="text" id="field" type="text">
+        <button id="search_button"> Search </button>
+        <div id="suggestions_box" class="suggestions">
+
+        </div>
                     </div>
                 </div>
             </div>
