@@ -9,11 +9,11 @@ function search() {
     var value = $("#field").val(); //get the value of the text field
     var show=false; //don't show suggestions
 
-    $.each(names, function (i, val) {
-        var start = names[i].toLowerCase().search(value.toLowerCase().trim());
+    $.each(movies, function (i, val) {
+        var start = movies[i].toLowerCase().search(value.toLowerCase().trim());
         if (start != -1) { //if there is a search match
-            html += "<div class='sub_suggestions' data-item='" + names[i] + "' >";
-            html += names[i].substring(0,start)+"<b>"+names[i].substring(start,start+value.length)+"</b>"+names[i].substring(start+value.length,names[i].length);
+            html += "<div class='sub_suggestions' data-item='" + movies[i] + "' >";
+            html += movies[i].substring(0,start)+"<b>"+movies[i].substring(start,start+value.length)+"</b>"+movies[i].substring(start+value.length,movies[i].length);
             html += "</div>";
             show=true; //show suggestions
         }
