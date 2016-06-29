@@ -1,3 +1,8 @@
+$(document).ready(function () { 
+     $("#search_button").on('click',search);
+     $("#field").on('keyup',search);
+ });
+
 function search() {
     var movies = movies[movies];
     var html = "";
