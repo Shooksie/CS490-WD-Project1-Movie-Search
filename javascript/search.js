@@ -1,7 +1,15 @@
 $(document).ready(function () { 
-     $("#search_button").on('click',search);
-     $("#field").on('keyup',search);
- });
+    $("#search_button").on('click',function(e){
+    e.stopPropagation();
+    search();
+    });
+    
+    $("#field").on('keyup',search);
+    
+    $("html").on('click',function(){
+        $("#suggestions_box").hide();
+    });
+});
 
 function search() {
     var movies = movies[movies];
@@ -13,7 +21,7 @@ function search() {
         var start = movies[i].toLowerCase().search(value.toLowerCase().trim());
         if (start != -1) { //if there is a search match
             html += "<div class='sub_suggestions' data-item='" + movies[i] + "' >";
-            html += movies[i].substring(0,start)+"<b>"+movies[i].substring(start,start+value.length)+"</b>"+movies[i].substring(start+value.length,movies[i].length);
+            html += movies[i].title + movies[i].year + movies[i].starring;
             html += "</div>";
             show=true; //show suggestions
         }
