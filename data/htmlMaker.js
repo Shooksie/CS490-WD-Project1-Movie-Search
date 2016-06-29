@@ -1,9 +1,10 @@
+
+
+
+
 function htmlMaker(template) { //this class is used to generate dynamic HTML
     this.template = template;
 }
-
-
-
 
 //the parameters are passed as an associative array. They are used as parameters in the template
 htmlMaker.prototype.getHTML = function (values) {
